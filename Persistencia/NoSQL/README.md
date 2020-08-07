@@ -17,6 +17,7 @@ A maior parte de nós fomos apresentado apenas a modelos relacionais compostos p
 <p>
 Por fim, vamos descrever 4 tipos de modelos de dados em que o NoSQL implementa:
 </p>
+
 #### Chave-valor
 <p>
 Lembrando a estrutura de Map do Java, os dados são armazenados apenas possuindo chave e valor, e toda a consulta é realizada exclusivamente pela chave. Essa característica dá a esse tipo de NoSQL a complexidade computacional O(1) para consulta, ou seja, a pesquisa é praticamente linear independente da volumetria que o banco possua.

@@ -16,9 +16,14 @@ sudo docker start mongodb<br />
 
 #### comandos
 list databases
+
+show dbs ===> lista todos os databases do mongo
+
+show collections ===> lista todas as collections do banco selecionado
+
 db.adminCommand( { listDatabases: 1 } )
 
-use nomeDoBanco
+use nomeDoBanco    ===> seleciona um database
 
 db.runCommand( { listCollections: 1.0, authorizedCollections: true, nameOnly: true } )
 
@@ -85,6 +90,14 @@ while (myCursor.hasNext()) {
 
 criando collection
 
+
+db.colors.insertMany([
+               {name:"red",value:"FF0000"},
+               {name:"green",value:"00FF00"},
+               {name:"blue",value:"0000FF"}
+]);
+
+
 db.colors.save({name:"red",value:"FF0000"});
 
 db.usuarios.insert( {
@@ -102,6 +115,20 @@ MeusDados = {
 }
 db.meudb.save(MeusDados)
 
+
+try {
+   db.products.insertMany( [
+      { _id: 10, item: "large box", qty: 20 },
+      { _id: 11, item: "small box", qty: 55 },
+      { _id: 11, item: "medium box", qty: 30 },
+      { _id: 12, item: "envelope", qty: 100},
+      { _id: 13, item: "stamps", qty: 125 },
+      { _id: 13, item: "tape", qty: 20},
+      { _id: 14, item: "bubble wrap", qty: 30}
+   ], { ordered: false } );
+} catch (e) {
+   print (e);
+}
 
 
 
